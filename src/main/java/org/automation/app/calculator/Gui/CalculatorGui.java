@@ -1,4 +1,4 @@
-package core;
+package org.automation.app.calculator.Gui;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
