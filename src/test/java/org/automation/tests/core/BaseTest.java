@@ -1,6 +1,6 @@
-package org.automation.tests;
+package org.automation.tests.core;
 
-import core.Calculator;
+import org.automation.app.calculator.Calculator;
 import org.testng.annotations.*;
 
 public abstract class BaseTest {
