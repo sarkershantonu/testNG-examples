@@ -10,6 +10,7 @@
     <properties>
         <global.suit.xml>src/test/resources/testng.xml</global.suit.xml>
         <surefire.version>2.22.2</surefire.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
