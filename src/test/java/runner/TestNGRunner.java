@@ -16,28 +16,26 @@ import java.util.List;
  * Created by shantonu on 6/5/16.
  */
 public class TestNGRunner {
-    public static void run() throws ParserConfigurationException, SAXException, IOException {
+    public static void runTestNgXml() throws IOException {
         List<XmlSuite> suit = new ArrayList<>();
         String xml = "testng.xml";
-        suit = (List<XmlSuite>) new Parser(xml).parse();
-
-        TestNG runner = new TestNG();
-        runner.setXmlSuites(suit);
-        runner.run();
+        run(xml);
     }
-    public static void run(String xmlPath) throws IOException, SAXException, ParserConfigurationException {
+    public static void run(String xmlPath) throws IOException {
         List<XmlSuite> suits = new ArrayList();
         suits = (List<XmlSuite>) new Parser(xmlPath).parse();
-        new TestNG().setXmlSuites(suits);
+        TestNG runner = new TestNG();
+        runner.setXmlSuites(suits);
+        runner.run();
     }
-    public static void runAll(Collection<String> xmls) throws IOException, SAXException, ParserConfigurationException {
+    public static void runAllSuitesFromFolder(Collection<String> xmls) throws IOException, SAXException, ParserConfigurationException {
         List<XmlSuite> suits = new ArrayList();
         for(String xml:xmls){
         suits.addAll((List<XmlSuite>) new Parser(xml).parse());
         }
         new TestNG().setXmlSuites(suits);
     }
-    public static void runAll(String folderPath) throws IOException, SAXException, ParserConfigurationException {
+    public static void runAllSuitesFromFolder(String folderPath) throws IOException, SAXException, ParserConfigurationException {
         File folder  = new File(folderPath);
         for(File f : folder.listFiles()){
             if(f.isFile()){
@@ -46,7 +44,7 @@ public class TestNGRunner {
         }
     }
     public void runAllInResources() throws ParserConfigurationException, SAXException, IOException {
-        runAll(System.getProperty("user.dir")+"/src/test/resources");
+        runAllSuitesFromFolder(System.getProperty("user.dir")+"/src/test/resources");
     }
 
 }
