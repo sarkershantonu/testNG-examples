@@ -1,6 +1,7 @@
 package org.automation.tests;
 
-import core.Calculator;
+import org.automation.app.calculator.Calculator;
+import org.automation.tests.core.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
