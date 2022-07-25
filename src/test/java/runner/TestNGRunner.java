@@ -28,7 +28,6 @@ public class TestNGRunner {
         run(items);
     }
 
-
     public static void run(String xmlPath) throws IOException {
         List<XmlSuite> suits = (List<XmlSuite>) new Parser(xmlPath).parse();
         run(suits);
