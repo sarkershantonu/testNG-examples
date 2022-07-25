@@ -28,9 +28,7 @@ public class TestNGRunner {
         run(items);
     }
     public static void runTestNgXml() throws IOException {
-        List<XmlSuite> suit = new ArrayList<>();
-        String xml = "testng.xml";
-        run(xml);
+        run("testng.xml");
     }
 
     public static void run(String xmlPath) throws IOException {
