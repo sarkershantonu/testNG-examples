@@ -35,9 +35,7 @@ public class TestNGRunner {
 
     public static void run(String xmlPath) throws IOException {
         List<XmlSuite> suits = (List<XmlSuite>) new Parser(xmlPath).parse();
-        TestNG runner = new TestNG();
-        runner.setXmlSuites(suits);
-        runner.run();
+        run(suits);
     }
 
     public static void runAllSuitesFromFolder(Collection<String> xmls) throws IOException {
