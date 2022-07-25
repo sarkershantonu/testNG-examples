@@ -16,11 +16,23 @@ import java.util.List;
  * Created by shantonu on 6/5/16.
  */
 public class TestNGRunner {
+
+    private static void run(List<XmlSuite> suits){
+        TestNG runner = new TestNG();
+        runner.setXmlSuites(suits);
+        runner.run();
+    }
+    private static void run(XmlSuite suits){
+        List<XmlSuite> items = new ArrayList<XmlSuite>();
+        items.add(suits);
+        run(items);
+    }
     public static void runTestNgXml() throws IOException {
         List<XmlSuite> suit = new ArrayList<>();
         String xml = "testng.xml";
         run(xml);
     }
+
     public static void run(String xmlPath) throws IOException {
         List<XmlSuite> suits = new ArrayList();
         suits = (List<XmlSuite>) new Parser(xmlPath).parse();
@@ -28,23 +40,26 @@ public class TestNGRunner {
         runner.setXmlSuites(suits);
         runner.run();
     }
-    public static void runAllSuitesFromFolder(Collection<String> xmls) throws IOException, SAXException, ParserConfigurationException {
+
+    public static void runAllSuitesFromFolder(Collection<String> xmls) throws IOException {
         List<XmlSuite> suits = new ArrayList();
-        for(String xml:xmls){
-        suits.addAll((List<XmlSuite>) new Parser(xml).parse());
+        for (String xml : xmls) {
+            suits.addAll((List<XmlSuite>) new Parser(xml).parse());
         }
         new TestNG().setXmlSuites(suits);
     }
-    public static void runAllSuitesFromFolder(String folderPath) throws IOException, SAXException, ParserConfigurationException {
-        File folder  = new File(folderPath);
-        for(File f : folder.listFiles()){
-            if(f.isFile()){
+
+    public static void runAllSuitesFromFolder(String folderPath) throws IOException {
+        File folder = new File(folderPath);
+        for (File f : folder.listFiles()) {
+            if (f.isFile()) {
                 run(f.getName());
             }
         }
     }
+
     public void runAllInResources() throws ParserConfigurationException, SAXException, IOException {
-        runAllSuitesFromFolder(System.getProperty("user.dir")+"/src/test/resources");
+        runAllSuitesFromFolder(System.getProperty("user.dir") + "/src/test/resources");
     }
 
 }
