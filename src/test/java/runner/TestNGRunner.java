@@ -27,9 +27,7 @@ public class TestNGRunner {
         items.add(suits);
         run(items);
     }
-    public static void runTestNgXml() throws IOException {
-        run("testng.xml");
-    }
+
 
     public static void run(String xmlPath) throws IOException {
         List<XmlSuite> suits = (List<XmlSuite>) new Parser(xmlPath).parse();
@@ -56,5 +54,7 @@ public class TestNGRunner {
     public void runAllInResources() throws IOException {
         runAllSuitesFromFolder(System.getProperty("user.dir") + "/src/test/resources");
     }
-
+    public static void runTestNgXml() throws IOException {
+        run("testng.xml");
+    }
 }
