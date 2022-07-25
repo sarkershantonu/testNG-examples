@@ -58,7 +58,7 @@ public class TestNGRunner {
         }
     }
 
-    public void runAllInResources() throws ParserConfigurationException, SAXException, IOException {
+    public void runAllInResources() throws IOException {
         runAllSuitesFromFolder(System.getProperty("user.dir") + "/src/test/resources");
     }
 
