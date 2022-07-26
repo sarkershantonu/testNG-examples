@@ -33,7 +33,7 @@ public class TestNGRunner {
         run(suits);
     }
 
-    public static void runAllSuitesFromFolder(Collection<String> xmls) throws IOException {
+    public static void runAllSuites(Collection<String> xmls) throws IOException {
         List<XmlSuite> suits = new ArrayList();
         for (String xml : xmls) {
             suits.addAll( new Parser(xml).parse());
