@@ -22,4 +22,9 @@ public class Calculator {
     public Calculator() {
 
     }
+
+    public <T extends Number> T add(T a, T b){
+        return (T) (Double.valueOf(a.doubleValue()+b.doubleValue()));
+    }
+
 }
