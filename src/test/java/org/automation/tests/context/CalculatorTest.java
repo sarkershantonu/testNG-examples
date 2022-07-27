@@ -1,6 +1,5 @@
 package org.automation.tests.context;
 
-import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.Test;
 
