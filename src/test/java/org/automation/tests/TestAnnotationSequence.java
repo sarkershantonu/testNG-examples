@@ -5,7 +5,7 @@ import org.automation.tests.core.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-public class TestDemo extends BaseTest {
+public class TestAnnotationSequence extends BaseTest {
 
     /*@BeforeSuite
     public void beforeSuite(){
