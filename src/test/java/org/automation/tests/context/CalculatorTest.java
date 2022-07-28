@@ -3,14 +3,16 @@ package org.automation.tests.context;
 import org.testng.ITestContext;
 import org.testng.annotations.Test;
 
+import java.lang.reflect.Method;
+
 import static org.testng.Assert.assertEquals;
 
 public class CalculatorTest extends BaseTestWithContext{
     @Test(priority = 1)
-    public void testAdditionFail(ITestContext context) {
+    public void testAdditionFail(ITestContext context, Method m) {
         context.setAttribute("env","DEV");
         assertEquals(35.0, aCalculator.add(10.0, 15.0), 0.01);
-
+        System.out.println(m.getName());
     }
 
     @Test(priority = 3)
