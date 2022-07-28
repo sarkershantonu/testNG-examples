@@ -11,8 +11,9 @@ public class CalculatorTest extends BaseTestWithContext{
     @Test(priority = 1)
     public void testAdditionFail(ITestContext context, Method m) {
         context.setAttribute("env","DEV");
-        assertEquals(35.0, aCalculator.add(10.0, 15.0), 0.01);
         System.out.println(m.getName());
+        assertEquals(35.0, aCalculator.add(10.0, 15.0), 0.01);
+
     }
 
     @Test(priority = 3)
