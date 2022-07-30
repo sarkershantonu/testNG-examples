@@ -3,9 +3,7 @@ package org.automation.tests.context;
 import org.testng.ITestContext;
 import org.testng.annotations.Test;
 
-import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.lang.reflect.Type;
 
 import static org.testng.Assert.assertEquals;
 
