@@ -1,6 +1,7 @@
 package org.automation.tests.context;
 
 import org.testng.ITestContext;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import java.lang.reflect.Method;
@@ -12,6 +13,7 @@ public class CalculatorTest extends BaseTestWithContext{
     public void testAdditionFail(ITestContext context, Method m) {
         context.setAttribute("env","DEV");
         System.out.println(m.getName());
+        Reporter.clear();
         assertEquals(35.0, aCalculator.add(10.0, 15.0), 0.01);
 
     }
