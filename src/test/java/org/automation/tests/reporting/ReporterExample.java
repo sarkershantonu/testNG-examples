@@ -11,6 +11,7 @@ import java.lang.reflect.Method;
 import static org.testng.Assert.assertEquals;
 
 public class ReporterExample extends BaseTestWithContext {
+
     @Test(priority = 0)
     public void testAddition(ITestContext context, Method m) {
         Reporter.clear();
