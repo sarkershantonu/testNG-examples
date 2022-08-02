@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Calculator Test">
+    <test verbose="2" preserve-order="true"
+          name="CalculatorTest">
+        <classes>
+            <class name="org.automation.tests.context.CalculatorTest">
+                <methods>
+                    <include name="testAdditionFail"/>
+                    <include name="testAddition"/>
+                    <include name="testAdditionForText"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <listeners>
+        <listener class-name="org.automation.tests.reporting.MyReport"></listener>
+    </listeners>
+</suite>
